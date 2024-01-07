@@ -38,6 +38,7 @@ public class InterfaceInfoController {
         InterfaceInfo interFaceInfo = new InterfaceInfo();
         BeanUtils.copyProperties(interfaceInfoAddRequest,interFaceInfo);
 
+        //TODO 此处的userID 需改为登录用户的userID
         interFaceInfo.setUserid(0L);
 
         boolean result = interfaceInfoService.save(interFaceInfo);

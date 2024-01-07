@@ -6,13 +6,9 @@ import static com.msfmydream.common.BaseStatus.SUCCESS;
 
 public  class ResultUtils<T> {
 
-    public static BaseResponse success(Object data){
+    public static <T> BaseResponse success(T data){
 
-        BaseResponse response = new BaseResponse<>();
-        response.setCode(SUCCESS);
-        response.setData(data);
-        response.setMessage(SUCCESS.message());
-        return response;
+        return BaseResponse.with(SUCCESS, data);
     }
 
 }

@@ -1,10 +1,8 @@
 package com.msfmydream.model.dto.interfaceinfo;
 
+import com.msfmydream.constant.PageRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-
 import java.io.Serializable;
 
 /**
@@ -13,7 +11,7 @@ import java.io.Serializable;
  * @author azu
  */
 
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class InterfaceInfoQueryRequest extends PageRequest implements Serializable {
 
@@ -63,7 +61,4 @@ public class InterfaceInfoQueryRequest extends PageRequest implements Serializab
     private Integer status;
 
 
-    protected InterfaceInfoQueryRequest(int page, int size, Sort sort) {
-        super(page, size, sort);
-    }
 }

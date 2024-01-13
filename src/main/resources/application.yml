@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/azuapi
     username: root
-    password: root
+    password: wt20010828
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -24,7 +24,7 @@ server:
     context-path: /api
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:

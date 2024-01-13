@@ -74,7 +74,7 @@ public class InterfaceInfoController {
     }
 
     @PostMapping("/update")
-    public BaseResponse<Boolean> updatePost(@RequestBody InterfaceInfoUpdateRequest interfaceInfoUpdateRequest,
+    public BaseResponse<Boolean> updateInterfaceInfo(@RequestBody InterfaceInfoUpdateRequest interfaceInfoUpdateRequest,
                                             HttpServletRequest request) {
         if (interfaceInfoUpdateRequest == null || interfaceInfoUpdateRequest.getId() <= 0) {
             throw new BusinessException(BaseStatus.PARAM_ERROR);
@@ -97,7 +97,7 @@ public class InterfaceInfoController {
 
 
     @GetMapping("/get")
-    public BaseResponse<InterfaceInfo> getPostById(long id) {
+    public BaseResponse<InterfaceInfo> getInterfaceInfoById(long id) {
         if (id <= 0) {
             throw new BusinessException(BaseStatus.PARAM_ERROR);
         }
@@ -107,7 +107,7 @@ public class InterfaceInfoController {
 
 
     @GetMapping("/list")
-    public BaseResponse<List<InterfaceInfo>> listPost(InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
+    public BaseResponse<List<InterfaceInfo>> listInterfaceInfo(InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
         InterfaceInfo interfaceInfoQuery = new InterfaceInfo();
         if (interfaceInfoQueryRequest != null) {
             BeanUtils.copyProperties(interfaceInfoQueryRequest, interfaceInfoQuery);
@@ -119,7 +119,7 @@ public class InterfaceInfoController {
 
 
     @GetMapping("/list/page")
-    public BaseResponse<Page<InterfaceInfo>> listPostByPage(InterfaceInfoQueryRequest interfaceinfoQueryRequest,
+    public BaseResponse<Page<InterfaceInfo>> listInterfaceInfoByPage(InterfaceInfoQueryRequest interfaceinfoQueryRequest,
                                                             HttpServletRequest httpServletRequest) {
         if (interfaceinfoQueryRequest == null) {
             throw new BusinessException(BaseStatus.PARAM_ERROR);

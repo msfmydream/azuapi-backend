@@ -9,12 +9,12 @@ create table if not exists azuapi.`interface_info`
     `method` varchar(256) not null comment '请求类型',
     `description` varchar(256) null comment '接口描述信息',
     `requestHeader` text null comment '请求头信息',
-    `reponseHeader` text null comment '响应头信息',
+    `responseHeader` text null comment '响应头信息',
     `userId` bigint not null comment '创建人',
     `status` tinyint not null comment '接口状态（0 关闭，1开启）',
-    `create_time` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
-    `update_time` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
-    `is_deleted` tinyint default 0 not null comment '是否删除(0-未删, 1-已删)'
+    `createTime` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    `updateTime` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    `isDeleted` tinyint default 0 not null comment '是否删除(0-未删, 1-已删)'
     ) comment '接口信息表';
 -- 接口信息表 模拟数据
 insert into azuapi.`interface_info` (`name`, `url`, `method`, `description`, `requestHeader`, `reponseHeader`, `userId`, `status`) values ('BW', 'www.tenesha-gutkowski.com', '2Dv', 'Un', 'K0IT', 'Hz', 4584, 1);
@@ -38,6 +38,8 @@ create table if not exists user
     gender       tinyint                                null comment '性别',
     user_role     varchar(256) default 'user'            not null comment '用户角色：user / admin',
     user_password varchar(512)                           not null comment '密码',
+    accessKey   varchar(512)    not null     comment 'accessKey',
+    secretKey   varchar(512)     not null    comment 'secretKey',
     create_time   datetime     default CURRENT_TIMESTAMP not null comment '创建时间',
     update_time   datetime     default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     isDelete     tinyint      default 0                 not null comment '是否删除',

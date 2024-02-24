@@ -43,12 +43,12 @@ public class InterfaceInfoQueryRequest extends PageRequest implements Serializab
     /**
      * 请求头信息
      */
-    private String requestheader;
+    private String requestHeader;
 
     /**
      * 响应头信息
      */
-    private String reponseheader;
+    private String responseHeader;
 
     /**
      * 创建人

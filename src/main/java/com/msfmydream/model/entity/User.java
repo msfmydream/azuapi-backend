@@ -57,6 +57,11 @@ public class User implements Serializable {
     @TableField(value = "user_password")
     private String userPassword;
 
+
+    private String accessKey;
+
+    private String secretKey;
+
     /**
      * 创建时间
      */
